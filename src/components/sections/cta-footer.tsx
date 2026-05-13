@@ -24,7 +24,7 @@ export function CtaFooter() {
             boxShadow: "10px 11px 63px 0px rgba(0,0,0,0.02)",
           }}
         >
-          <div className="flex flex-1 flex-col gap-8 md:gap-10 items-start min-w-0 h-fit">
+          <div className="flex flex-1 flex-col gap-8 md:gap-10 items-start min-w-0 h-fit" style={{ paddingBottom: "60px" }}>
             <p
               className="font-jakarta font-semibold w-full leading-normal"
               style={{ fontSize: "clamp(24px, 4vw, 50px)", color: "#252525" }}
