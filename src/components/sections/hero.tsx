@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useLang } from "@/lib/lang-context";
 import { translations } from "@/lib/translations";
 
@@ -13,6 +14,7 @@ export function Hero() {
   const tr = translations[lang].nav;
   const hero = translations[lang].hero;
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -20,12 +22,18 @@ export function Hero() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
     <>
       {/* Sticky nav */}
       <nav
         className={[
-          "fixed top-0 inset-x-0 z-50 flex items-center gap-4 md:gap-16 px-5 py-4 transition-all duration-300 ease-in-out",
+          "fixed top-0 inset-x-0 z-50 flex items-center gap-4 tablet:gap-16 px-5 py-4 transition-all duration-300 ease-in-out",
           scrolled
             ? "bg-black/50 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.25)] border-b border-white/10"
             : "bg-transparent",
@@ -36,13 +44,12 @@ export function Hero() {
           <img alt="Pixtalase" src={IMG_LOGO} className="absolute inset-0 w-full h-full object-contain" decoding="async" />
         </div>
 
-        {/* Nav links — hidden on mobile */}
-        <div className="hidden md:flex flex-1 items-center gap-4 min-w-0">
+        {/* Nav links — hidden below 834px */}
+        <div className="hidden tablet:flex flex-1 items-center gap-4 min-w-0">
           <div
             className="shrink-0 flex items-center justify-center px-4 py-2 rounded-full transition-colors duration-300"
             style={{
               backgroundColor: scrolled ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.4)",
-              border: "0.5px solid white",
             }}
           >
             <span
@@ -69,8 +76,20 @@ export function Hero() {
           ))}
         </div>
 
-        {/* Spacer on mobile */}
-        <div className="flex-1 md:hidden" />
+        {/* Spacer — pushes right-side controls to the end on mobile */}
+        <div className="flex-1 tablet:hidden" />
+
+        {/* Hamburger button — visible below 834px */}
+        <button
+          onClick={() => setMenuOpen((o) => !o)}
+          className="tablet:hidden shrink-0 flex items-center justify-center w-9 h-9 rounded-full transition-colors duration-300"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        >
+          {menuOpen
+            ? <X className="text-white w-5 h-5" strokeWidth={2} />
+            : <Menu className="text-white w-5 h-5" strokeWidth={2} />}
+        </button>
 
         {/* Language switcher */}
         <div
@@ -101,6 +120,53 @@ export function Hero() {
           </button>
         </div>
       </nav>
+
+      {/* Full-screen backdrop — closes menu when clicking outside */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-[39] tablet:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile menu drawer — visible below 834px when open */}
+      <div
+        className={[
+          "fixed inset-x-0 top-[65px] z-40 tablet:hidden flex flex-col transition-all duration-300 ease-in-out overflow-hidden h-fit",
+          menuOpen ? "max-h-screen opacity-100 pointer-events-auto" : "max-h-0 opacity-0 pointer-events-none",
+        ].join(" ")}
+        style={{ backgroundColor: "rgba(0,0,0,0.6)", backdropFilter: "blur(12px)" }}
+        onClick={() => setMenuOpen(false)}
+      >
+        <div className="flex flex-col px-10 py-10 gap-1 h-full pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center px-4 py-3 rounded-full font-inter font-bold text-white text-base text-left whitespace-nowrap transition-colors w-fit"
+            style={{
+              backgroundColor: "rgba(0,0,0,0.5)",
+              letterSpacing: "0.04em",
+              textShadow: "0px 2px 4px rgba(0,0,0,0.35)",
+            }}
+          >
+            {tr.home}
+          </button>
+          {tr.links.map((link) => (
+            <button
+              key={link}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center px-4 py-3 rounded-full font-inter font-semibold text-base text-left whitespace-nowrap transition-colors hover:bg-white/10 w-fit"
+              style={{
+                color: "#f3f2ec",
+                letterSpacing: "0.04em",
+                textShadow: "0px 2px 4px rgba(0,0,0,0.35)",
+              }}
+            >
+              {link}
+            </button>
+          ))}
+
+        </div>
+      </div>
 
       {/* Hero section */}
       <section
@@ -159,6 +225,7 @@ export function Hero() {
             <div
               className="btn-red flex items-center justify-center p-3 rounded-full shrink-0 cursor-pointer"
               style={{ boxShadow: "0px 4px 2px rgba(0,0,0,0.25)" }}
+              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
             >
               <img alt="" src={IMG_ARROW} className="w-6 h-6" decoding="async" />
             </div>

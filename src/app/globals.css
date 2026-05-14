@@ -17,6 +17,9 @@
    ============================================================ */
 
 @theme inline {
+  /* ── Custom breakpoints ──────────────────────────────────── */
+  --breakpoint-tablet: 834px;
+
   /* ── Tailwind color bridge ───────────────────────────────── */
   --color-background:           var(--background);
   --color-foreground:           var(--foreground);
