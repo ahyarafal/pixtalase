@@ -106,8 +106,7 @@ export function Pricing() {
 
               {/* CTA */}
               <div
-                className="flex items-center justify-center p-5 rounded-full shrink-0 w-full cursor-pointer hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#e62727" }}
+                className="btn-red flex items-center justify-center p-5 rounded-full shrink-0 w-full cursor-pointer"
               >
                 <span
                   className="font-inter font-semibold text-white text-center text-lg whitespace-nowrap"
@@ -191,11 +190,8 @@ export function Pricing() {
           </div>
 
           <div
-            className="relative flex items-center justify-center px-[60px] py-5 rounded-full shrink-0 cursor-pointer hover:opacity-90 transition-opacity"
-            style={{
-              backgroundColor: "#e62727",
-              boxShadow: "0px 3px 7px rgba(0,0,0,0.15)",
-            }}
+            className="btn-red relative flex items-center justify-center px-[60px] py-5 rounded-full shrink-0 cursor-pointer"
+            style={{ boxShadow: "0px 3px 7px rgba(0,0,0,0.15)" }}
           >
             <span
               className="font-inter font-semibold text-white text-center text-lg whitespace-nowrap"

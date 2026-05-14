@@ -202,6 +202,15 @@
     padding: 60px;
   }
 
+  /* Primary red CTA button */
+  .btn-red {
+    background-color: #e62727;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-red:hover {
+    background-color: oklch(0.380 0.175 27); /* --color-red-700 */
+  }
+
   /* Red pill indicator for pricing tiers */
   .tier-indicator {
     display: inline-flex;

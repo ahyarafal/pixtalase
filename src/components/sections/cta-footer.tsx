@@ -52,8 +52,7 @@ export function CtaFooter() {
                 </span>
               </div>
               <div
-                className="flex items-center justify-center px-8 py-4 rounded-full shrink-0 cursor-pointer hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#e62727" }}
+                className="btn-red flex items-center justify-center px-8 py-4 rounded-full shrink-0 cursor-pointer"
               >
                 <span
                   className="font-inter font-medium text-white text-center text-lg whitespace-nowrap"

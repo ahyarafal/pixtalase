@@ -157,11 +157,8 @@ export function Hero() {
             </div>
 
             <div
-              className="flex items-center justify-center p-3 rounded-full shrink-0 cursor-pointer"
-              style={{
-                backgroundColor: "#e62727",
-                boxShadow: "0px 4px 2px rgba(0,0,0,0.25)",
-              }}
+              className="btn-red flex items-center justify-center p-3 rounded-full shrink-0 cursor-pointer"
+              style={{ boxShadow: "0px 4px 2px rgba(0,0,0,0.25)" }}
             >
               <img alt="" src={IMG_ARROW} className="w-6 h-6" decoding="async" />
             </div>

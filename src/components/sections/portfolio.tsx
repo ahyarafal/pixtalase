@@ -16,12 +16,24 @@ const portfolioImages = [
 
 function PortfolioCard({ src }: { src: string }) {
   return (
-    <div className="relative flex flex-col h-[320px] md:h-[400px] items-end justify-end p-8 rounded-[40px] overflow-hidden">
+    <div className="group relative flex flex-col h-[320px] md:h-[400px] items-end justify-end p-8 rounded-[40px] overflow-hidden cursor-pointer">
+      {/* Background image */}
       <div className="absolute inset-0 pointer-events-none rounded-[40px] overflow-hidden">
         <div className="absolute inset-0 bg-black rounded-[40px]" />
-        <img alt="" src={src} className="absolute inset-0 w-full h-full object-cover rounded-[40px]" loading="lazy" decoding="async" />
+        <img
+          alt=""
+          src={src}
+          className="absolute inset-0 w-full h-full object-cover rounded-[40px] transition-transform duration-500 ease-out group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0">
+
+      {/* Dark overlay — fades in on hover */}
+      <div className="absolute inset-0 rounded-[40px] bg-black/0 group-hover:bg-black/45 transition-all duration-300 ease-out pointer-events-none" />
+
+      {/* Arrow icon — scales up on hover */}
+      <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0 transition-transform duration-300 ease-out group-hover:scale-125 group-hover:drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
         <img alt="" src={IMG_FRAME_OVERLAY} className="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async" />
       </div>
     </div>
