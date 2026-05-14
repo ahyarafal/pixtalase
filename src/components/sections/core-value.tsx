@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { BrainCircuit, MonitorCog } from "lucide-react";
 import { useLang } from "@/lib/lang-context";
 import { translations } from "@/lib/translations";
 
@@ -18,6 +19,10 @@ const SLIDE_NUMS = ["01", "02", "03"];
 
 export function CoreValue() {
   const [current, setCurrent] = useState(0);
+  const [dir, setDir] = useState<"left" | "right">("left");
+  const [animKey, setAnimKey] = useState(0);
+  const rowRef = useRef<HTMLDivElement>(null);
+  const [rowHeight, setRowHeight] = useState<number | undefined>(undefined);
   const { lang } = useLang();
   const tr = translations[lang].coreValue;
   const slide = tr.slides[current];
@@ -25,11 +30,43 @@ export function CoreValue() {
   const isFirst = current === 0;
   const isLast  = current === 2;
 
-  const prev = () => { if (!isFirst) setCurrent((i) => i - 1); };
-  const next = () => { if (!isLast)  setCurrent((i) => i + 1); };
+  useEffect(() => {
+    if (rowRef.current && rowHeight === undefined) {
+      setRowHeight(rowRef.current.offsetHeight);
+    }
+  }, [rowHeight]);
+
+  const prev = () => {
+    if (!isFirst) {
+      setDir("right");
+      setAnimKey((k) => k + 1);
+      setCurrent((i) => i - 1);
+    }
+  };
+  const next = () => {
+    if (!isLast) {
+      setDir("left");
+      setAnimKey((k) => k + 1);
+      setCurrent((i) => i + 1);
+    }
+  };
+
+  const slideClass = dir === "left" ? "cv-slide-left" : "cv-slide-right";
 
   return (
     <section className="p-5" style={{ backgroundColor: "#f5f6fb" }}>
+      <style>{`
+        @keyframes cv-in-left {
+          from { transform: translateX(48px); opacity: 0; }
+          to   { transform: translateX(0);    opacity: 1; }
+        }
+        @keyframes cv-in-right {
+          from { transform: translateX(-48px); opacity: 0; }
+          to   { transform: translateX(0);     opacity: 1; }
+        }
+        .cv-slide-left  { animation: cv-in-left  0.38s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+        .cv-slide-right { animation: cv-in-right 0.38s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+      `}</style>
       <div
         className="flex flex-col gap-[60px] items-start w-full"
         style={{
@@ -50,7 +87,11 @@ export function CoreValue() {
         </div>
 
         {/* Slider / 3-column content */}
-        <div className="flex flex-col md:flex-row gap-5 items-start shrink-0 w-full">
+        <div
+          ref={rowRef}
+          className="flex flex-col md:flex-row gap-5 items-start shrink-0 w-full overflow-hidden"
+          style={rowHeight !== undefined ? { minHeight: rowHeight } : undefined}
+        >
           {/* Column 1 — counter + nav */}
           <div className="flex md:flex-1 flex-row md:flex-col items-center md:items-start justify-between w-full md:w-auto md:self-stretch min-w-0">
             <div className="flex flex-col gap-5 items-start shrink-0 font-jakarta font-medium">
@@ -67,24 +108,16 @@ export function CoreValue() {
               <button
                 onClick={prev}
                 disabled={isFirst}
-                className="flex items-center justify-center p-3 rounded-full shrink-0 w-14 h-14 transition-all disabled:cursor-not-allowed"
-                style={
-                  isFirst
-                    ? { border: "1px solid rgba(37,37,37,0.2)" }
-                    : { backgroundColor: "#e62727" }
-                }
+                className={`flex items-center justify-center p-3 rounded-full shrink-0 w-14 h-14 transition-all disabled:cursor-not-allowed ${!isFirst ? "btn-red" : ""}`}
+                style={isFirst ? { border: "1px solid rgba(37,37,37,0.2)" } : undefined}
               >
                 <img alt="Back" src={IMG_BACK_BTN} className="w-6 h-6" style={{ filter: isFirst ? "brightness(0)" : "brightness(0) invert(1)" }} loading="lazy" decoding="async" />
               </button>
               <button
                 onClick={next}
                 disabled={isLast}
-                className="flex items-center justify-center p-3 rounded-full shrink-0 w-14 h-14 transition-all disabled:cursor-not-allowed"
-                style={
-                  isLast
-                    ? { border: "1px solid rgba(37,37,37,0.2)" }
-                    : { backgroundColor: "#e62727" }
-                }
+                className={`flex items-center justify-center p-3 rounded-full shrink-0 w-14 h-14 transition-all disabled:cursor-not-allowed ${!isLast ? "btn-red" : ""}`}
+                style={isLast ? { border: "1px solid rgba(37,37,37,0.2)" } : undefined}
               >
                 <img alt="Forward" src={IMG_FWD_BTN} className="w-6 h-6" style={{ filter: isLast ? "brightness(0)" : "brightness(0) invert(1)" }} loading="lazy" decoding="async" />
               </button>
@@ -93,7 +126,8 @@ export function CoreValue() {
 
           {/* Column 2 — description card */}
           <div
-            className="flex md:flex-1 flex-col gap-[60px] items-start min-w-0 p-8 rounded-[20px] w-full md:w-auto"
+            key={`desc-${animKey}`}
+            className={`flex md:flex-1 flex-col gap-[60px] items-start min-w-0 p-8 rounded-[20px] w-full md:w-auto ${slideClass}`}
             style={{ backgroundColor: "#000000", minHeight: "350px", height: "fit-content" }}
           >
             <p
@@ -102,12 +136,17 @@ export function CoreValue() {
             >
               {slide.desc}
             </p>
-            <img alt="" src={IMG_CHEVRON} className="w-6 h-6 shrink-0" loading="lazy" decoding="async" />
+            {current === 0 && (
+              <img alt="" src={IMG_CHEVRON} className="w-6 h-6 shrink-0" loading="lazy" decoding="async" />
+            )}
+            {current === 1 && <BrainCircuit className="w-6 h-6 shrink-0 text-white" />}
+            {current === 2 && <MonitorCog className="w-6 h-6 shrink-0 text-white" />}
           </div>
 
           {/* Column 3 — photo */}
           <div
-            className="md:flex-1 w-full md:w-auto self-stretch rounded-[20px] overflow-hidden relative"
+            key={`photo-${animKey}`}
+            className={`md:flex-1 w-full md:w-auto self-stretch rounded-[20px] overflow-hidden relative ${slideClass}`}
             style={{ backgroundColor: "#252525", minHeight: "280px" }}
           >
             <img alt="" src={SLIDE_PHOTOS[current]} className="absolute inset-0 w-full h-full object-cover rounded-[20px]" loading="lazy" decoding="async" />
