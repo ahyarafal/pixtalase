@@ -29,7 +29,6 @@ const en = {
   coreValue: {
     label: "CORE VALUE",
     heading: "You can focus on the brand 👀 we handle the website.",
-    desc: "Spend more time improving your brand, creating innovative solution, and producing a competitive product that truly meaningful for your customer.",
     slides: [
       {
         title: "Tell us about your brand",
@@ -145,7 +144,6 @@ const en = {
   portfolio: {
     label: "TEMPLATE GALLERY",
     heading: "Find the best visual to represent your brand 👑",
-    desc: "Select from many template available for your brand identity, make it yours and yours only",
   },
   howItWorks: {
     label: "GETTING STARTED",

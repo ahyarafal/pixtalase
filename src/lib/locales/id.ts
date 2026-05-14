@@ -29,7 +29,6 @@ const id = {
   coreValue: {
     label: "NILAI INTI",
     heading: "Kamu fokus ke brand 👀 kami yang urus websitenya.",
-    desc: "Habiskan lebih banyak waktu untuk meningkatkan brand kamu, menciptakan solusi inovatif, dan menghasilkan produk kompetitif yang benar-benar bermakna bagi pelangganmu.",
     slides: [
       {
         title: "Ceritakan tentang brandmu",
@@ -145,7 +144,6 @@ const id = {
   portfolio: {
     label: "GALERI TEMPLATE",
     heading: "Temukan visual terbaik untuk merepresentasikan brandmu 👑",
-    desc: "Pilih dari banyak template yang tersedia untuk identitas brandmu, jadikan milikmu sendiri",
   },
   howItWorks: {
     label: "MULAI SEKARANG",

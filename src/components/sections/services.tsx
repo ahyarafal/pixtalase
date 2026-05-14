@@ -25,7 +25,7 @@ function ServiceCard({ icon, label }: { icon: string; label: string }) {
         boxShadow: "0px 1px 1.5px rgba(0,0,0,0.18)",
       }}
     >
-      <img alt="" src={icon} className="w-[27px] h-[27px] shrink-0" />
+      <img alt="" src={icon} className="w-[27px] h-[27px] shrink-0" loading="lazy" decoding="async" />
       <p
         className="font-jakarta font-semibold whitespace-nowrap leading-[1.4]"
         style={{ fontSize: "24px", color: "#252525" }}

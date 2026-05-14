@@ -3,7 +3,6 @@
 import { useLang } from "@/lib/lang-context";
 import { translations } from "@/lib/translations";
 
-const IMG_ELLIPSE    = "https://www.figma.com/api/mcp/asset/3aa1bd82-d077-4da9-bde3-ad243f966c02";
 const IMG_LOGO_ACCENT = "https://www.figma.com/api/mcp/asset/546a592f-08f2-4a35-8b10-e0b660afd904";
 const IMG_CUSTOM_PHOTO = "https://www.figma.com/api/mcp/asset/bd87e851-fcbf-40bb-bcad-25150adfa6b3";
 
@@ -28,20 +27,9 @@ export function Pricing() {
           boxShadow: "10px 11px 31.5px rgba(0,0,0,0.02)",
         }}
       >
-        {/* Section label */}
-        <div className="flex items-center gap-2 shrink-0">
-          <img alt="" src={IMG_ELLIPSE} className="w-2 h-2 shrink-0" />
-          <span
-            className="font-inter font-medium text-base text-center whitespace-nowrap"
-            style={{ color: "#252525", letterSpacing: "0.06em" }}
-          >
-            {tr.label}
-          </span>
-        </div>
-
         {/* Heading + sub */}
         <div
-          className="flex flex-col gap-5 items-start justify-center shrink-0 font-jakarta font-medium w-full"
+          className="flex flex-col gap-5 items-start justify-center shrink-0 font-jakarta font-medium w-full lg:w-[60%]"
           style={{ color: "#252525" }}
         >
           <p style={{ fontSize: "clamp(28px, 5vw, 50px)", lineHeight: "1.2", letterSpacing: "-1.5px" }}>
@@ -53,11 +41,11 @@ export function Pricing() {
         </div>
 
         {/* 3 Tier cards */}
-        <div className="flex flex-col md:flex-row gap-5 items-stretch shrink-0 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 shrink-0 w-full">
           {tr.tiers.map((t, idx) => (
             <div
               key={t.tier}
-              className="flex flex-1 flex-col gap-10 items-start min-w-0 p-8 rounded-[20px]"
+              className="flex flex-col gap-10 items-start min-w-0 p-8 rounded-[20px]"
               style={{ backgroundColor: "#000000" }}
             >
               {/* Tier header */}
@@ -134,7 +122,7 @@ export function Pricing() {
 
         {/* Custom plan */}
         <div
-          className="relative flex flex-col gap-[60px] items-start overflow-hidden p-8 md:p-[60px] rounded-[20px] shrink-0 w-full"
+          className="relative flex flex-col gap-10 lg:gap-[60px] items-start overflow-hidden p-5 lg:p-[60px] rounded-[20px] shrink-0 w-full"
           style={{
             backgroundColor: "#ffffff",
             border: "1px solid #1a92bb",
@@ -146,7 +134,7 @@ export function Pricing() {
             className="absolute pointer-events-none hidden md:block"
             style={{ width: "730px", height: "667.314px", right: "-171px", top: "-41px" }}
           >
-            <img alt="" src={IMG_LOGO_ACCENT} className="absolute inset-0 w-full h-full object-contain" />
+            <img alt="" src={IMG_LOGO_ACCENT} className="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async" />
           </div>
 
           {/* Custom photo — desktop only */}
@@ -158,6 +146,8 @@ export function Pricing() {
               alt=""
               src={IMG_CUSTOM_PHOTO}
               className="absolute max-w-none"
+              loading="lazy"
+              decoding="async"
               style={{ height: "161.01%", left: "-26.14%", top: "-34.53%", width: "221.14%" }}
             />
           </div>

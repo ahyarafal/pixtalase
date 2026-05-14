@@ -18,7 +18,7 @@ export function CtaFooter() {
       >
         {/* CTA block */}
         <div
-          className="flex flex-col md:flex-row gap-10 items-end justify-end overflow-hidden p-8 md:p-[60px] md:pb-0 shrink-0 w-full"
+          className="flex flex-col md:flex-row gap-10 items-end justify-end overflow-hidden p-8 md:p-10 md:pb-0 lg:p-[60px] lg:pb-0 shrink-0 w-full"
           style={{
             borderBottom: "1px solid #e3e3e3",
             boxShadow: "10px 11px 63px 0px rgba(0,0,0,0.02)",
@@ -67,20 +67,22 @@ export function CtaFooter() {
 
           {/* Photo — hidden on mobile */}
           <div
-            className="hidden md:block relative shrink-0 overflow-hidden"
-            style={{ width: "403px", height: "393px", borderRadius: "12px" }}
+            className="hidden md:block relative shrink-0 overflow-hidden md:w-[280px] md:h-[274px] lg:w-[403px] lg:h-[393px]"
+            style={{ borderRadius: "12px" }}
           >
             <img
               alt=""
               src={IMG_PHOTO}
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
 
         {/* Footer nav area */}
         <div
-          className="flex flex-col md:flex-row gap-10 md:gap-[60px] items-start overflow-hidden p-8 md:p-[60px] shrink-0 w-full"
+          className="flex flex-col md:flex-row gap-10 md:gap-[60px] items-start overflow-hidden p-8 md:p-10 lg:p-[60px] shrink-0 w-full"
           style={{ boxShadow: "10px 11px 31.5px rgba(0,0,0,0.02)" }}
         >
           {/* Logo */}
@@ -88,7 +90,7 @@ export function CtaFooter() {
             className="relative shrink-0"
             style={{ width: "clamp(72px, 10vw, 110px)", height: "clamp(66px, 9vw, 100px)" }}
           >
-            <img alt="Pixtalase" src={IMG_LOGO} className="absolute inset-0 w-full h-full object-contain" />
+            <img alt="Pixtalase" src={IMG_LOGO} className="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async" />
           </div>
 
           {/* Nav columns */}
@@ -98,7 +100,7 @@ export function CtaFooter() {
           >
             {/* Navigation */}
             <div className="flex flex-col gap-4 md:gap-5 items-start">
-              <p className="tracking-wide">{tr.navLabel}</p>
+              <p className="tracking-wide font-black">{tr.navLabel}</p>
               {tr.navLinks.map((l) => (
                 <a key={l} href="#" className="hover:opacity-60 transition-opacity whitespace-nowrap">
                   {l}
@@ -108,7 +110,7 @@ export function CtaFooter() {
 
             {/* Contact */}
             <div className="flex flex-col gap-4 md:gap-5 items-start">
-              <p className="tracking-wide">{tr.contactLabel}</p>
+              <p className="tracking-wide font-black">{tr.contactLabel}</p>
               {tr.contactLinks.map((l) => (
                 <a key={l} href="#" className="hover:opacity-60 transition-opacity whitespace-nowrap">
                   {l}
@@ -118,7 +120,7 @@ export function CtaFooter() {
 
             {/* Legal */}
             <div className="flex flex-col gap-4 md:gap-5 items-start">
-              <p className="tracking-wide">{tr.legalLabel}</p>
+              <p className="tracking-wide font-black">{tr.legalLabel}</p>
               {tr.legalLinks.map((l) => (
                 <a key={l} href="#" className="hover:opacity-60 transition-opacity whitespace-nowrap">
                   {l}
@@ -128,7 +130,7 @@ export function CtaFooter() {
 
             {/* Brand */}
             <div className="flex flex-col gap-4 md:gap-5 items-start">
-              <p className="tracking-wide">{tr.brandLabel}</p>
+              <p className="tracking-wide font-black">{tr.brandLabel}</p>
               <p>Pixtalase</p>
             </div>
           </div>
@@ -136,7 +138,7 @@ export function CtaFooter() {
 
         {/* Bottom bar */}
         <div
-          className="flex items-start overflow-hidden p-8 md:p-[60px] shrink-0 w-full"
+          className="flex items-start overflow-hidden p-8 md:p-10 lg:p-[60px] shrink-0 w-full"
           style={{
             borderTop: "1px solid #e3e3e3",
             boxShadow: "10px 11px 63px 0px rgba(0,0,0,0.02)",

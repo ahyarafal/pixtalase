@@ -4,7 +4,6 @@ import { TrendingDown, Cpu, Users, SlidersHorizontal } from "lucide-react";
 import { useLang } from "@/lib/lang-context";
 import { translations } from "@/lib/translations";
 
-const IMG_ELLIPSE = "https://www.figma.com/api/mcp/asset/3aa1bd82-d077-4da9-bde3-ad243f966c02";
 const IMG_PHOTO = "/thumbsup_guy.png";
 
 const icons = [
@@ -25,17 +24,6 @@ export function Problem() {
     >
       {/* Left — Problem */}
       <div className="flex flex-col gap-8 lg:gap-10 items-start w-full lg:w-[500px] lg:shrink-0" style={{ paddingTop: "16px" }}>
-        {/* Section label */}
-        <div className="flex items-center gap-2 shrink-0">
-          <img alt="" src={IMG_ELLIPSE} className="w-2 h-2 shrink-0" />
-          <span
-            className="font-inter font-medium text-base text-center whitespace-nowrap"
-            style={{ color: "#252525", letterSpacing: "0.06em" }}
-          >
-            {tr.label}
-          </span>
-        </div>
-
         {/* Heading */}
         <p
           className="font-jakarta font-semibold shrink-0 w-full"
@@ -77,20 +65,10 @@ export function Problem() {
           backgroundColor: "#ffffff",
           borderRadius: "clamp(24px, 4vw, 60px)",
           padding: "clamp(24px, 4vw, 60px)",
+          paddingBottom: 0,
           boxShadow: "10px 11px 63px 0px rgba(0,0,0,0.02)",
         }}
       >
-        {/* Section label */}
-        <div className="flex items-center gap-2 shrink-0">
-          <img alt="" src={IMG_ELLIPSE} className="w-2 h-2 shrink-0" />
-          <span
-            className="font-inter font-medium text-base text-center whitespace-nowrap"
-            style={{ color: "#252525", letterSpacing: "0.06em" }}
-          >
-            {tr.solutionLabel}
-          </span>
-        </div>
-
         {/* Description */}
         <p
           className="font-jakarta font-medium shrink-0 w-full"
@@ -112,6 +90,8 @@ export function Problem() {
             alt=""
             src={IMG_PHOTO}
             className="absolute inset-0 w-full h-full object-contain object-bottom"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

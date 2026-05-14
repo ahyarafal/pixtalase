@@ -33,7 +33,7 @@ export function Hero() {
       >
         {/* Logo */}
         <div className="relative shrink-0" style={{ width: "38.785px", height: "35.455px" }}>
-          <img alt="Pixtalase" src={IMG_LOGO} className="absolute inset-0 w-full h-full object-contain" />
+          <img alt="Pixtalase" src={IMG_LOGO} className="absolute inset-0 w-full h-full object-contain" decoding="async" />
         </div>
 
         {/* Nav links — hidden on mobile */}
@@ -41,7 +41,7 @@ export function Hero() {
           <div
             className="shrink-0 flex items-center justify-center px-4 py-2 rounded-full transition-colors duration-300"
             style={{
-              backgroundColor: scrolled ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.4)",
+              backgroundColor: scrolled ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.4)",
               border: "0.5px solid white",
             }}
           >
@@ -113,6 +113,8 @@ export function Hero() {
             alt=""
             src={IMG_BG}
             className="absolute inset-0 w-full h-full object-cover object-center"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
 
@@ -161,7 +163,7 @@ export function Hero() {
                 boxShadow: "0px 4px 2px rgba(0,0,0,0.25)",
               }}
             >
-              <img alt="" src={IMG_ARROW} className="w-6 h-6" />
+              <img alt="" src={IMG_ARROW} className="w-6 h-6" decoding="async" />
             </div>
           </div>
         </div>
