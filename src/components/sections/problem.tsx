@@ -48,7 +48,7 @@ export function Problem() {
                 {icons[i]}
               </div>
               <p
-                className="font-jakarta font-medium flex-1 min-w-0 leading-[1.4]"
+                className="font-inter font-medium flex-1 min-w-0 leading-[1.4]"
                 style={{ fontSize: i === 0 ? "18px" : "16px", color: "#252525" }}
               >
                 {text}
@@ -71,7 +71,7 @@ export function Problem() {
       >
         {/* Description */}
         <p
-          className="font-jakarta font-medium w-full md:w-auto md:flex-1 md:self-center lg:flex-none lg:w-full"
+          className="font-inter font-medium w-full md:w-auto md:flex-1 md:self-center lg:flex-none lg:w-full"
           style={{ fontSize: "clamp(18px, 2.5vw, 24px)", lineHeight: "1.4", color: "#252525" }}
         >
           {tr.solutionDesc[0]}{" "}

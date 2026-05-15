@@ -131,7 +131,7 @@ export function CoreValue() {
             style={{ backgroundColor: "#000000", minHeight: "350px" }}
           >
             <p
-              className="font-jakarta font-medium text-white flex-1 w-full leading-[1.4]"
+              className="font-inter font-medium text-white flex-1 w-full leading-[1.4]"
               style={{ fontSize: "clamp(20px, 3vw, 32px)", letterSpacing: "-0.96px" }}
             >
               {slide.desc}

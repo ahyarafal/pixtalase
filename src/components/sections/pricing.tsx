@@ -32,10 +32,10 @@ export function Pricing() {
           className="flex flex-col gap-5 items-start justify-center shrink-0 font-jakarta font-medium w-full lg:w-[60%]"
           style={{ color: "#252525" }}
         >
-          <p style={{ fontSize: "clamp(28px, 5vw, 50px)", lineHeight: "1.2", letterSpacing: "-1.5px" }}>
+          <p className="font-jakarta" style={{ fontSize: "clamp(28px, 5vw, 50px)", lineHeight: "1.2", letterSpacing: "-1.5px" }}>
             {tr.heading}
           </p>
-          <p style={{ fontSize: "18px", lineHeight: "1.4" }}>
+          <p className="font-inter font-medium" style={{ fontSize: "18px", lineHeight: "1.4" }}>
             {tr.subheading}
           </p>
         </div>
@@ -60,7 +60,7 @@ export function Pricing() {
                   </span>
                 </div>
                 <p
-                  className="font-jakarta font-medium w-full leading-[1.4]"
+                  className="font-inter font-medium w-full leading-[1.4]"
                   style={{ fontSize: "20px", color: "rgba(255,255,255,0.6)", letterSpacing: "-0.6px" }}
                 >
                   {t.subtitle}
@@ -73,12 +73,12 @@ export function Pricing() {
                   <p className="font-jakarta font-bold shrink-0" style={{ fontSize: "32px", letterSpacing: "-0.96px" }}>
                     {tierPrices[idx].price}
                   </p>
-                  <p className="font-jakarta font-normal shrink-0" style={{ fontSize: "16px", letterSpacing: "-0.48px" }}>
+                  <p className="font-inter font-normal shrink-0" style={{ fontSize: "16px", letterSpacing: "-0.48px" }}>
                     {tierPrices[idx].period}
                   </p>
                 </div>
                 <p
-                  className="font-jakarta font-bold w-full"
+                  className="font-inter font-bold w-full"
                   style={{ fontSize: "16px", letterSpacing: "0.06em", color: "#1ec2fb" }}
                 >
                   {tierPrices[idx].annualPrice}
@@ -99,7 +99,7 @@ export function Pricing() {
 
               {/* Features */}
               <div
-                className="flex-1 font-jakarta font-medium w-full"
+                className="flex-1 font-inter font-medium w-full"
                 style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", letterSpacing: "-0.42px", lineHeight: "1.4" }}
               >
                 <p className="mb-0">{t.bestForLabel}</p>
@@ -163,7 +163,7 @@ export function Pricing() {
               </span>
             </div>
             <p
-              className="font-jakarta font-medium w-full leading-[1.4]"
+              className="font-inter font-medium w-full leading-[1.4]"
               style={{ fontSize: "20px", color: "rgba(37,37,37,0.6)", letterSpacing: "-0.6px" }}
             >
               {tr.customSubtitle}
@@ -178,7 +178,7 @@ export function Pricing() {
           </p>
 
           <div
-            className="relative font-jakarta font-medium shrink-0"
+            className="relative font-inter font-medium shrink-0"
             style={{ fontSize: "16px", letterSpacing: "-0.48px", color: "#252525", lineHeight: "1.4" }}
           >
             <p>{tr.customDesc}</p>

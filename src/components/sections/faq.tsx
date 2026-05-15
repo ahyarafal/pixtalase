@@ -63,7 +63,7 @@ export function FAQ() {
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`font-jakarta font-medium w-full pt-1 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
+                      className={`font-inter font-medium w-full pt-1 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
                       style={{ fontSize: "16px" }}
                     >
                       {faq.a}

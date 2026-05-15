@@ -94,7 +94,7 @@ export function CtaFooter() {
 
           {/* Nav columns */}
           <div
-            className="grid grid-cols-2 md:flex md:flex-wrap items-start gap-8 md:gap-[60px] w-full font-jakarta font-medium leading-[1.4]"
+            className="grid grid-cols-2 md:flex md:flex-wrap items-start gap-8 md:gap-[60px] w-full font-inter font-medium leading-[1.4]"
             style={{ fontSize: "clamp(14px, 1.5vw, 18px)", color: "#252525" }}
           >
             {/* Navigation */}
@@ -144,7 +144,7 @@ export function CtaFooter() {
           }}
         >
           <div
-            className="flex flex-1 flex-col md:flex-row items-start md:justify-between gap-2 min-w-0 font-jakarta font-medium leading-[1.4]"
+          className="flex flex-1 flex-col md:flex-row items-start md:justify-between gap-2 min-w-0 font-inter font-medium leading-[1.4]"
             style={{ fontSize: "18px", color: "#252525" }}
           >
             <p>{tr.location}</p>
