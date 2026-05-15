@@ -85,6 +85,18 @@ export function Pricing() {
                 </p>
               </div>
 
+              {/* CTA */}
+              <div
+                className="btn-red flex items-center justify-center p-5 rounded-full shrink-0 w-full cursor-pointer"
+              >
+                <span
+                  className="font-inter font-semibold text-white text-center text-lg whitespace-nowrap"
+                  style={{ letterSpacing: "0.04em" }}
+                >
+                  {t.cta}
+                </span>
+              </div>
+
               {/* Features */}
               <div
                 className="flex-1 font-jakarta font-medium w-full"
@@ -102,18 +114,6 @@ export function Pricing() {
                     <li key={f} className="ms-[21px]">{f}</li>
                   ))}
                 </ul>
-              </div>
-
-              {/* CTA */}
-              <div
-                className="btn-red flex items-center justify-center p-5 rounded-full shrink-0 w-full cursor-pointer"
-              >
-                <span
-                  className="font-inter font-semibold text-white text-center text-lg whitespace-nowrap"
-                  style={{ letterSpacing: "0.04em" }}
-                >
-                  {t.cta}
-                </span>
               </div>
             </div>
           ))}
