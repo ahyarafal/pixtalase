@@ -89,7 +89,7 @@ export function CoreValue() {
         {/* Slider / 3-column content */}
         <div
           ref={rowRef}
-          className="flex flex-col md:flex-row gap-5 items-start shrink-0 w-full overflow-hidden"
+          className="flex flex-col md:flex-row gap-5 items-start md:items-stretch shrink-0 w-full overflow-hidden"
           style={rowHeight !== undefined ? { minHeight: rowHeight } : undefined}
         >
           {/* Column 1 — counter + nav */}
@@ -128,7 +128,7 @@ export function CoreValue() {
           <div
             key={`desc-${animKey}`}
             className={`flex md:flex-1 flex-col gap-[60px] items-start min-w-0 p-8 rounded-[20px] w-full md:w-auto ${slideClass}`}
-            style={{ backgroundColor: "#000000", minHeight: "350px", height: "fit-content" }}
+            style={{ backgroundColor: "#000000", minHeight: "350px" }}
           >
             <p
               className="font-jakarta font-medium text-white flex-1 w-full leading-[1.4]"

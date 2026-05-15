@@ -60,7 +60,7 @@ export function Problem() {
 
       {/* Right — Solution */}
       <div
-        className="flex flex-1 flex-col gap-8 lg:gap-10 items-start min-w-0 w-full lg:w-auto"
+        className="flex flex-1 flex-col md:flex-row lg:flex-col gap-8 lg:gap-10 items-start md:items-stretch lg:items-start min-w-0 w-full lg:w-auto"
         style={{
           backgroundColor: "#ffffff",
           borderRadius: "clamp(24px, 4vw, 60px)",
@@ -71,7 +71,7 @@ export function Problem() {
       >
         {/* Description */}
         <p
-          className="font-jakarta font-medium shrink-0 w-full"
+          className="font-jakarta font-medium w-full md:w-auto md:flex-1 md:self-center lg:flex-none lg:w-full"
           style={{ fontSize: "clamp(18px, 2.5vw, 24px)", lineHeight: "1.4", color: "#252525" }}
         >
           {tr.solutionDesc[0]}{" "}
@@ -83,8 +83,7 @@ export function Problem() {
 
         {/* Photo */}
         <div
-          className="w-full relative overflow-hidden"
-          style={{ minHeight: "300px", height: "clamp(300px, 40vw, 500px)" }}
+          className="w-full min-h-[300px] h-[clamp(300px,40vw,500px)] relative overflow-hidden md:w-[45%] md:shrink-0 md:h-auto lg:w-full lg:h-[clamp(300px,40vw,500px)]"
         >
           <img
             alt=""

@@ -1,0 +1,40 @@
+{
+  "fontSize": {
+    "xs":   { "$type": "number", "$value": 12, "$description": "12px — captions, labels", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "sm":   { "$type": "number", "$value": 14, "$description": "14px — small body", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "base": { "$type": "number", "$value": 16, "$description": "16px — body / section-label", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "lg":   { "$type": "number", "$value": 18, "$description": "18px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "xl":   { "$type": "number", "$value": 20, "$description": "20px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "2xl":  { "$type": "number", "$value": 24, "$description": "24px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "3xl":  { "$type": "number", "$value": 30, "$description": "30px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "4xl":  { "$type": "number", "$value": 36, "$description": "36px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "5xl":  { "$type": "number", "$value": 48, "$description": "48px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "6xl":  { "$type": "number", "$value": 60, "$description": "60px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "7xl":  { "$type": "number", "$value": 72, "$description": "72px — display", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } }
+  },
+
+  "fontWeight": {
+    "regular":   { "$type": "number", "$value": 400, "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "medium":    { "$type": "number", "$value": 500, "$description": "UI labels, section-label — Inter", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "semibold":  { "$type": "number", "$value": 600, "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "bold":      { "$type": "number", "$value": 700, "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "extrabold": { "$type": "number", "$value": 800, "$description": "Display headings — Plus Jakarta Sans", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } }
+  },
+
+  "lineHeight": {
+    "tight":   { "$type": "number", "$value": 1.2,   "$description": "Headings h1–h6", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "normal":  { "$type": "number", "$value": 1.5,   "$description": "Body text", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "relaxed": { "$type": "number", "$value": 1.625, "$description": "Long-form reading", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } }
+  },
+
+  "letterSpacing": {
+    "normal":  { "$type": "number", "$value": 0,    "$description": "0em", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "wide":    { "$type": "number", "$value": 0.06, "$description": "0.06em — section-label uppercase tracking", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "wider":   { "$type": "number", "$value": 0.1,  "$description": "0.1em", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "widest":  { "$type": "number", "$value": 0.15, "$description": "0.15em", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } }
+  },
+
+  "$extensions": {
+    "com.figma.modeName": "typography"
+  }
+}

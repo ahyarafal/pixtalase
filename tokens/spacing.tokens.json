@@ -1,0 +1,33 @@
+{
+  "spacing": {
+    "1":  { "$type": "number", "$value": 4,   "$description": "4px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "2":  { "$type": "number", "$value": 8,   "$description": "8px — icon gap, small inset", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "3":  { "$type": "number", "$value": 12,  "$description": "12px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "4":  { "$type": "number", "$value": 16,  "$description": "16px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "5":  { "$type": "number", "$value": 20,  "$description": "20px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "6":  { "$type": "number", "$value": 24,  "$description": "24px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "8":  { "$type": "number", "$value": 32,  "$description": "32px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "10": { "$type": "number", "$value": 40,  "$description": "40px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "12": { "$type": "number", "$value": 48,  "$description": "48px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "14": { "$type": "number", "$value": 56,  "$description": "56px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "15": { "$type": "number", "$value": 60,  "$description": "60px — section-card padding", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "16": { "$type": "number", "$value": 64,  "$description": "64px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "20": { "$type": "number", "$value": 80,  "$description": "80px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "24": { "$type": "number", "$value": 96,  "$description": "96px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "28": { "$type": "number", "$value": 112, "$description": "112px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "32": { "$type": "number", "$value": 128, "$description": "128px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } }
+  },
+
+  "borderRadius": {
+    "sm":   { "$type": "number", "$value": 7,    "$description": "7px — small elements", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "md":   { "$type": "number", "$value": 10,   "$description": "10px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "lg":   { "$type": "number", "$value": 12,   "$description": "12px — default (0.75rem)", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "xl":   { "$type": "number", "$value": 17,   "$description": "17px", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "card": { "$type": "number", "$value": 60,   "$description": "60px — section-card container", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } },
+    "pill": { "$type": "number", "$value": 9999, "$description": "full pill / badge", "$extensions": { "com.figma.scopes": ["ALL_SCOPES"] } }
+  },
+
+  "$extensions": {
+    "com.figma.modeName": "spacing"
+  }
+}
